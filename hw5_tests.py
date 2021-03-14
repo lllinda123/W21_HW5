@@ -43,7 +43,9 @@ class TestCard(unittest.TestCase):
 
         a = hw5.Card(0, 12)
         self.assertEqual(a.rank_name, "Queen")
-        # return X, Y
+        X = a.rank_name
+        Y = "Queen"
+        return X, Y
 
     def test_q2(self):
         '''
@@ -59,7 +61,9 @@ class TestCard(unittest.TestCase):
         '''
         a = hw5.Card(1, 12)
         self.assertEqual(a.suit_name, "Clubs")
-        # return X, Y
+        X = a.suit_name
+        Y = "Clubs"
+        return X, Y
 
     def test_q3(self):
         '''
@@ -76,7 +80,9 @@ class TestCard(unittest.TestCase):
         '''
         a = hw5.Card(3, 13)
         self.assertEqual(a.__str__(), "King of Spades")
-        # return X, Y
+        X = a.__str__()
+        Y = "King of Spades"
+        return X, Y
 
     def test_q4(self):
         '''
@@ -92,7 +98,9 @@ class TestCard(unittest.TestCase):
         '''
         a = hw5.Deck()
         self.assertEqual(len(a.cards), 52)
-        # return X, Y
+        X = len(a.cards)
+        Y = 52
+        return X, Y
 
     def test_q5(self):
         '''
@@ -108,8 +116,10 @@ class TestCard(unittest.TestCase):
         '''
         a = hw5.Deck()
         # print(type(a.deal_card()))
-        self.assertEqual(type(a.deal_card()), hw5.Card)
-        # return X, Y
+        self.assertIsInstance(a.deal_card(), hw5.Card)
+        X = a.deal_card()
+        Y = hw5.Card
+        return X, Y
 
     def test_q6(self):
         '''
@@ -128,7 +138,9 @@ class TestCard(unittest.TestCase):
         b = len(a.cards)
         a.deal_card()
         self.assertEqual(len(a.cards), b - 1)
-        # return X, Y
+        X = len(a.cards)
+        Y = b-1
+        return X, Y
 
     def test_q7(self):
         '''
@@ -148,7 +160,9 @@ class TestCard(unittest.TestCase):
         c = a.deal_card()
         a.replace_card(c)
         self.assertEqual(len(a.cards), b - 1 + 1)
-        # return X, Y
+        X = len(a.cards)
+        Y = b
+        return X, Y
 
     def test_q8(self):
         '''
@@ -169,8 +183,9 @@ class TestCard(unittest.TestCase):
         a.replace_card(c)
         a.replace_card(c)
         self.assertEqual(len(a.cards), b - 1 + 1)
-        # aaa
-        # return X, Y
+        X = len(a.cards)
+        Y = b
+        return X, Y
 
 
 if __name__ == "__main__":
